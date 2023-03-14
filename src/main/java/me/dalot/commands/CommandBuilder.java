@@ -20,6 +20,7 @@ public class CommandBuilder {
 
     public static void register(ProxyWhitelist proxyWhitelist) {
         server = proxyWhitelist.getServer();
+
         final CommandHandler handler = new CommandHandler(proxyWhitelist);
         server.getCommandManager().register(server.getCommandManager().metaBuilder("proxywhitelist").build(), new BrigadierCommand(
                 LiteralArgumentBuilder.<CommandSource>literal("proxywhitelist").requires(sender -> sender.hasPermission("proxywhitelist.admin")).executes(handler::about)
