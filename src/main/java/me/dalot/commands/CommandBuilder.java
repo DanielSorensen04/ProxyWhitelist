@@ -22,7 +22,7 @@ public class CommandBuilder {
         server = proxyWhitelist.getServer();
         final CommandHandler handler = new CommandHandler(proxyWhitelist);
         server.getCommandManager().register(server.getCommandManager().metaBuilder("proxywhitelist").build(), new BrigadierCommand(
-                LiteralArgumentBuilder.<CommandSource>literal("vwhitelist").requires(sender -> sender.hasPermission("proxywhitelist.admin")).executes(handler::about)
+                LiteralArgumentBuilder.<CommandSource>literal("proxywhitelist").requires(sender -> sender.hasPermission("proxywhitelist.admin")).executes(handler::about)
                         .then(LiteralArgumentBuilder.<CommandSource>literal("on").executes(handler::turnOn))
                         .then(LiteralArgumentBuilder.<CommandSource>literal("off").executes(handler::turnOff))
 
